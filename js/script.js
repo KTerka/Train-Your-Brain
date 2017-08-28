@@ -47,3 +47,31 @@ function SimpleDiv(){
 	
 }
 
+function PrimaryNumberCheck(num) {
+	if (num > 2 ) {
+		for (var i = 0;  i < Math.floor(num/2) ; i++){
+			if (num % (i+2) == 0) {
+				document.getElementById("infoPrima").innerHTML = "NO ("+(i+2)+")";
+				
+				break;
+			}
+			else {
+				document.getElementById("infoPrima").innerHTML = "YES";
+			}
+			
+			
+		}
+		
+	}
+	else if (num == 2) {
+		document.getElementById("infoPrima").innerHTML = "YES";
+	}
+	else {
+		document.getElementById("infoPrima").innerHTML = "A prime number is a natural number greater than 1";
+	}
+}
+
+document.getElementById("buttonPrima").onclick = function(){
+	PrimaryNumberCheck(document.getElementById("ifPrime").value);
+};
+
